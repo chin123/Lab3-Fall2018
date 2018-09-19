@@ -25,9 +25,10 @@ public class Main {
     }
 
     public static int wordCount(String text) {
+        String[] words = text.split("[ ,.!?]+");
         int count = 0;
-        for (char character: text.toCharArray()) {
-            if (character == ' ') {
+        for (String a: words) {
+            if (a != "") {
                 count++;
             }
         }
@@ -60,7 +61,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-	// write your code here
         System.out.println(wordCount(urlToString("http://erdani.com/tdpl/hamlet.txt")));
         System.out.println(uniqueWordCount(urlToString("http://erdani.com/tdpl/hamlet.txt")));
         System.out.println(specificWordCount(urlToString("http://erdani.com/tdpl/hamlet.txt"), "Hamlet"));
